@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Web_Proje.KediÜrün>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Fotoğraf</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ürünAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stokMiktarı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TEDARİKÇİ.tedarikçiAdı)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="~/images/cat/catpic@(item.kediÜrünID).jpg" alt="img@(item.kediÜrünID)" class="table-image" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ürünAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stokMiktarı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEDARİKÇİ.tedarikçiAdı)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kediÜrünID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kediÜrünID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kediÜrünID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetDeryasıModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FATURA">
+    <Key>
+      <PropertyRef Name="faturaNo" />
+    </Key>
+    <Property Name="faturaNo" Type="int" Nullable="false" />
+    <Property Name="faturaTarihi" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HamsterÜrün">
+    <Key>
+      <PropertyRef Name="hamsterÜrünID" />
+    </Key>
+    <Property Name="hamsterÜrünID" Type="int" Nullable="false" />
+    <Property Name="tedarikçiNo" Type="int" Nullable="false" />
+    <Property Name="ürünAd" Type="text" Nullable="false" />
+    <Property Name="stokMiktarı" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KARGO">
+    <Key>
+      <PropertyRef Name="kargocuKodu" />
+    </Key>
+    <Property Name="kargocuKodu" Type="int" Nullable="false" />
+    <Property Name="Adı" Type="text" Nullable="false" />
+    <Property Name="vergiNo" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KediÜrün">
+    <Key>
+      <PropertyRef Name="kediÜrünID" />
+    </Key>
+    <Property Name="kediÜrünID" Type="int" Nullable="false" />
+    <Property Name="tedarikçiNo" Type="int" Nullable="false" />
+    <Property Name="ürünAd" Type="text" Nullable="false" />
+    <Property Name="stokMiktarı" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KöpekÜrün">
+    <Key>
+      <PropertyRef Name="köpekÜrünId" />
+    </Key>
+    <Property Name="köpekÜrünId" Type="int" Nullable="false" />
+    <Property Name="tedarikçiNo" Type="int" Nullable="false" />
+    <Property Name="ürünAd" Type="text" Nullable="false" />
+    <Property Name="stokMiktarı" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KuşÜrün">
+    <Key>
+      <PropertyRef Name="kuşÜrünId" />
+    </Key>
+    <Property Name="kuşÜrünId" Type="int" Nullable="false" />
+    <Property Name="tedarikçiNo" Type="int" Nullable="false" />
+    <Property Name="ürünAd" Type="text" Nullable="false" />
+    <Property Name="stokMiktarı" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MÜŞTERİ">
+    <Key>
+      <PropertyRef Name="müşteriNo" />
+    </Key>
+    <Property Name="müşteriNo" Type="int" Nullable="false" />
+    <Property Name="müşteriAdı" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="parola" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SİPARİŞ">
+    <Key>
+      <PropertyRef Name="siparişNo" />
+    </Key>
+    <Property Name="siparişNo" Type="int" Nullable="false" />
+    <Property Name="ürünID" Type="int" Nullable="false" />
+    <Property Name="müşteriNo" Type="int" Nullable="false" />
+    <Property Name="faturaNo" Type="int" Nullable="false" />
+    <Property Name="kargocuKodu" Type="int" Nullable="false" />
+    <Property Name="toplamFiyat" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TEDARİKÇİ">
+    <Key>
+      <PropertyRef Name="tedarikçiNo" />
+    </Key>
+    <Property Name="tedarikçiNo" Type="int" Nullable="false" />
+    <Property Name="tedarikçiAdı" Type="text" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_HamsterÜrün_TEDARİKÇİ">
+    <End Role="TEDARİKÇİ" Type="Self.TEDARİKÇİ" Multiplicity="1" />
+    <End Role="HamsterÜrün" Type="Self.HamsterÜrün" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEDARİKÇİ">
+        <PropertyRef Name="tedarikçiNo" />
+      </Principal>
+      <Dependent Role="HamsterÜrün">
+        <PropertyRef Name="tedarikçiNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KediÜrün_TEDARİKÇİ">
+    <End Role="TEDARİKÇİ" Type="Self.TEDARİKÇİ" Multiplicity="1" />
+    <End Role="KediÜrün" Type="Self.KediÜrün" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEDARİKÇİ">
+        <PropertyRef Name="tedarikçiNo" />
+      </Principal>
+      <Dependent Role="KediÜrün">
+        <PropertyRef Name="tedarikçiNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KöpekÜrün_TEDARİKÇİ">
+    <End Role="TEDARİKÇİ" Type="Self.TEDARİKÇİ" Multiplicity="1" />
+    <End Role="KöpekÜrün" Type="Self.KöpekÜrün" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEDARİKÇİ">
+        <PropertyRef Name="tedarikçiNo" />
+      </Principal>
+      <Dependent Role="KöpekÜrün">
+        <PropertyRef Name="tedarikçiNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KuşÜrün_TEDARİKÇİ">
+    <End Role="TEDARİKÇİ" Type="Self.TEDARİKÇİ" Multiplicity="1" />
+    <End Role="KuşÜrün" Type="Self.KuşÜrün" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEDARİKÇİ">
+        <PropertyRef Name="tedarikçiNo" />
+      </Principal>
+      <Dependent Role="KuşÜrün">
+        <PropertyRef Name="tedarikçiNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_FATURA1">
+    <End Role="FATURA" Type="Self.FATURA" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FATURA">
+        <PropertyRef Name="faturaNo" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="faturaNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_HamsterÜrün">
+    <End Role="HamsterÜrün" Type="Self.HamsterÜrün" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HamsterÜrün">
+        <PropertyRef Name="hamsterÜrünID" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="ürünID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_KARGO1">
+    <End Role="KARGO" Type="Self.KARGO" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KARGO">
+        <PropertyRef Name="kargocuKodu" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="kargocuKodu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_KediÜrün">
+    <End Role="KediÜrün" Type="Self.KediÜrün" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KediÜrün">
+        <PropertyRef Name="kediÜrünID" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="ürünID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_KöpekÜrün">
+    <End Role="KöpekÜrün" Type="Self.KöpekÜrün" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KöpekÜrün">
+        <PropertyRef Name="köpekÜrünId" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="ürünID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_KuşÜrün">
+    <End Role="KuşÜrün" Type="Self.KuşÜrün" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KuşÜrün">
+        <PropertyRef Name="kuşÜrünId" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="ürünID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SİPARİŞ_MÜŞTERİ1">
+    <End Role="MÜŞTERİ" Type="Self.MÜŞTERİ" Multiplicity="1" />
+    <End Role="SİPARİŞ" Type="Self.SİPARİŞ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MÜŞTERİ">
+        <PropertyRef Name="müşteriNo" />
+      </Principal>
+      <Dependent Role="SİPARİŞ">
+        <PropertyRef Name="müşteriNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetDeryasıModelStoreContainer">
+    <EntitySet Name="FATURA" EntityType="Self.FATURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HamsterÜrün" EntityType="Self.HamsterÜrün" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KARGO" EntityType="Self.KARGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KediÜrün" EntityType="Self.KediÜrün" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KöpekÜrün" EntityType="Self.KöpekÜrün" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KuşÜrün" EntityType="Self.KuşÜrün" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MÜŞTERİ" EntityType="Self.MÜŞTERİ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SİPARİŞ" EntityType="Self.SİPARİŞ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEDARİKÇİ" EntityType="Self.TEDARİKÇİ" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_HamsterÜrün_TEDARİKÇİ" Association="Self.FK_HamsterÜrün_TEDARİKÇİ">
+      <End Role="TEDARİKÇİ" EntitySet="TEDARİKÇİ" />
+      <End Role="HamsterÜrün" EntitySet="HamsterÜrün" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KediÜrün_TEDARİKÇİ" Association="Self.FK_KediÜrün_TEDARİKÇİ">
+      <End Role="TEDARİKÇİ" EntitySet="TEDARİKÇİ" />
+      <End Role="KediÜrün" EntitySet="KediÜrün" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KöpekÜrün_TEDARİKÇİ" Association="Self.FK_KöpekÜrün_TEDARİKÇİ">
+      <End Role="TEDARİKÇİ" EntitySet="TEDARİKÇİ" />
+      <End Role="KöpekÜrün" EntitySet="KöpekÜrün" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KuşÜrün_TEDARİKÇİ" Association="Self.FK_KuşÜrün_TEDARİKÇİ">
+      <End Role="TEDARİKÇİ" EntitySet="TEDARİKÇİ" />
+      <End Role="KuşÜrün" EntitySet="KuşÜrün" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_FATURA1" Association="Self.FK_SİPARİŞ_FATURA1">
+      <End Role="FATURA" EntitySet="FATURA" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_HamsterÜrün" Association="Self.FK_SİPARİŞ_HamsterÜrün">
+      <End Role="HamsterÜrün" EntitySet="HamsterÜrün" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_KARGO1" Association="Self.FK_SİPARİŞ_KARGO1">
+      <End Role="KARGO" EntitySet="KARGO" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_KediÜrün" Association="Self.FK_SİPARİŞ_KediÜrün">
+      <End Role="KediÜrün" EntitySet="KediÜrün" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_KöpekÜrün" Association="Self.FK_SİPARİŞ_KöpekÜrün">
+      <End Role="KöpekÜrün" EntitySet="KöpekÜrün" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_KuşÜrün" Association="Self.FK_SİPARİŞ_KuşÜrün">
+      <End Role="KuşÜrün" EntitySet="KuşÜrün" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SİPARİŞ_MÜŞTERİ1" Association="Self.FK_SİPARİŞ_MÜŞTERİ1">
+      <End Role="MÜŞTERİ" EntitySet="MÜŞTERİ" />
+      <End Role="SİPARİŞ" EntitySet="SİPARİŞ" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

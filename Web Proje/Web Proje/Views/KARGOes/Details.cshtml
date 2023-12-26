@@ -1,0 +1,42 @@
+﻿@model Web_Proje.KARGO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>KARGO</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Adı)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Adı)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.vergiNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.vergiNo)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.kargocuKodu }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

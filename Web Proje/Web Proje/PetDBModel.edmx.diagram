@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4afa10922bfe42e88be3e9ee00bb86db" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="PetDeryasıModel.FATURA" Width="1.5" PointX="8.625" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.HamsterÜrün" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.KARGO" Width="1.5" PointX="8.625" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.KediÜrün" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.KöpekÜrün" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.KuşÜrün" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.MÜŞTERİ" Width="1.5" PointX="8.625" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.SİPARİŞ" PointX="5.875" PointY="7.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetDeryasıModel.TEDARİKÇİ" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_FATURA1" />
+        <AssociationConnector Association="PetDeryasıModel.FK_HamsterÜrün_TEDARİKÇİ" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_HamsterÜrün" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_KARGO1" />
+        <AssociationConnector Association="PetDeryasıModel.FK_KediÜrün_TEDARİKÇİ" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_KediÜrün" />
+        <AssociationConnector Association="PetDeryasıModel.FK_KöpekÜrün_TEDARİKÇİ" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_KöpekÜrün" />
+        <AssociationConnector Association="PetDeryasıModel.FK_KuşÜrün_TEDARİKÇİ" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_KuşÜrün" />
+        <AssociationConnector ManuallyRouted="false" Association="PetDeryasıModel.FK_SİPARİŞ_MÜŞTERİ1" />
+        <EntityTypeShape EntityType="PetDeryasıModel.sipariş_view" Width="1.5" PointX="0.75" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

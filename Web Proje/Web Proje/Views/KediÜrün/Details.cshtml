@@ -1,0 +1,41 @@
+﻿@model Web_Proje.KediÜrün
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>KediÜrün</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ürünAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ürünAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stokMiktarı)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stokMiktarı)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEDARİKÇİ.tedarikçiAdı)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEDARİKÇİ.tedarikçiAdı)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kediÜrünID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

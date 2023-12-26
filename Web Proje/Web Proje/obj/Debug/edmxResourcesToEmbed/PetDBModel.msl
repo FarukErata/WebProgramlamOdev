@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PetDeryasıModelStoreContainer" CdmEntityContainer="PetDeryasıEntities">
+    <EntitySetMapping Name="FATURA">
+      <EntityTypeMapping TypeName="PetDeryasıModel.FATURA">
+        <MappingFragment StoreEntitySet="FATURA">
+          <ScalarProperty Name="faturaNo" ColumnName="faturaNo" />
+          <ScalarProperty Name="faturaTarihi" ColumnName="faturaTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HamsterÜrün">
+      <EntityTypeMapping TypeName="PetDeryasıModel.HamsterÜrün">
+        <MappingFragment StoreEntitySet="HamsterÜrün">
+          <ScalarProperty Name="hamsterÜrünID" ColumnName="hamsterÜrünID" />
+          <ScalarProperty Name="tedarikçiNo" ColumnName="tedarikçiNo" />
+          <ScalarProperty Name="ürünAd" ColumnName="ürünAd" />
+          <ScalarProperty Name="stokMiktarı" ColumnName="stokMiktarı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KARGO">
+      <EntityTypeMapping TypeName="PetDeryasıModel.KARGO">
+        <MappingFragment StoreEntitySet="KARGO">
+          <ScalarProperty Name="kargocuKodu" ColumnName="kargocuKodu" />
+          <ScalarProperty Name="Adı" ColumnName="Adı" />
+          <ScalarProperty Name="vergiNo" ColumnName="vergiNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KediÜrün">
+      <EntityTypeMapping TypeName="PetDeryasıModel.KediÜrün">
+        <MappingFragment StoreEntitySet="KediÜrün">
+          <ScalarProperty Name="kediÜrünID" ColumnName="kediÜrünID" />
+          <ScalarProperty Name="tedarikçiNo" ColumnName="tedarikçiNo" />
+          <ScalarProperty Name="ürünAd" ColumnName="ürünAd" />
+          <ScalarProperty Name="stokMiktarı" ColumnName="stokMiktarı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KöpekÜrün">
+      <EntityTypeMapping TypeName="PetDeryasıModel.KöpekÜrün">
+        <MappingFragment StoreEntitySet="KöpekÜrün">
+          <ScalarProperty Name="köpekÜrünId" ColumnName="köpekÜrünId" />
+          <ScalarProperty Name="tedarikçiNo" ColumnName="tedarikçiNo" />
+          <ScalarProperty Name="ürünAd" ColumnName="ürünAd" />
+          <ScalarProperty Name="stokMiktarı" ColumnName="stokMiktarı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KuşÜrün">
+      <EntityTypeMapping TypeName="PetDeryasıModel.KuşÜrün">
+        <MappingFragment StoreEntitySet="KuşÜrün">
+          <ScalarProperty Name="kuşÜrünId" ColumnName="kuşÜrünId" />
+          <ScalarProperty Name="tedarikçiNo" ColumnName="tedarikçiNo" />
+          <ScalarProperty Name="ürünAd" ColumnName="ürünAd" />
+          <ScalarProperty Name="stokMiktarı" ColumnName="stokMiktarı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MÜŞTERİ">
+      <EntityTypeMapping TypeName="PetDeryasıModel.MÜŞTERİ">
+        <MappingFragment StoreEntitySet="MÜŞTERİ">
+          <ScalarProperty Name="müşteriNo" ColumnName="müşteriNo" />
+          <ScalarProperty Name="müşteriAdı" ColumnName="müşteriAdı" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SİPARİŞ">
+      <EntityTypeMapping TypeName="PetDeryasıModel.SİPARİŞ">
+        <MappingFragment StoreEntitySet="SİPARİŞ">
+          <ScalarProperty Name="siparişNo" ColumnName="siparişNo" />
+          <ScalarProperty Name="ürünID" ColumnName="ürünID" />
+          <ScalarProperty Name="müşteriNo" ColumnName="müşteriNo" />
+          <ScalarProperty Name="faturaNo" ColumnName="faturaNo" />
+          <ScalarProperty Name="kargocuKodu" ColumnName="kargocuKodu" />
+          <ScalarProperty Name="toplamFiyat" ColumnName="toplamFiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEDARİKÇİ">
+      <EntityTypeMapping TypeName="PetDeryasıModel.TEDARİKÇİ">
+        <MappingFragment StoreEntitySet="TEDARİKÇİ">
+          <ScalarProperty Name="tedarikçiNo" ColumnName="tedarikçiNo" />
+          <ScalarProperty Name="tedarikçiAdı" ColumnName="tedarikçiAdı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

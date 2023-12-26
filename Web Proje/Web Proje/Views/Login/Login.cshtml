@@ -1,0 +1,36 @@
+﻿@model Web_Proje.MÜŞTERİ
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+        {
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="username">Kullanıcı Adı:</label>
+                    <input type="text" name="müşteriAdı" placeholder="Kullanıcı Adınız">
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <label for="password">Şifre:</label>
+                        <input type="password" name="parola" placeholder="Şifreniz">
+                    </div>
+                </div>
+                <button type="submit" class="btn" value="login">Login</button><br />
+                <label style="text-align:center; font-weight:800; ">@ViewBag.Mesaj</label>
+            </div>
+        }
+    </div>
+
+</body>
+</html>

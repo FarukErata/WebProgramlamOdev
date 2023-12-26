@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Web_Proje.KöpekÜrün>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+            <p>Fotoğraf</p>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ürünAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stokMiktarı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TEDARİKÇİ.tedarikçiAdı)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="~/images/dog/dogpic@(item.köpekÜrünId).jpg" alt="img1" class="table-image" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ürünAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stokMiktarı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEDARİKÇİ.tedarikçiAdı)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.köpekÜrünId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.köpekÜrünId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.köpekÜrünId })
+        </td>
+    </tr>
+    }
+    
+    </table>
+</body>
+</html>

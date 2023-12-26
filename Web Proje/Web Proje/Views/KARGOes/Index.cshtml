@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Web_Proje.KARGO>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vergiNo)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vergiNo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.kargocuKodu }) |
+                @Html.ActionLink("Details", "Details", new { id=item.kargocuKodu }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.kargocuKodu })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

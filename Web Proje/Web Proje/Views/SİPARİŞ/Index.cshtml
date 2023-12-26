@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Web_Proje.SİPARİŞ>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.toplamFiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FATURA.faturaNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HamsterÜrün.ürünAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KARGO.Adı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KediÜrün.ürünAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KöpekÜrün.ürünAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KuşÜrün.ürünAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MÜŞTERİ.müşteriAdı)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.toplamFiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FATURA.faturaNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HamsterÜrün.ürünAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KARGO.Adı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KediÜrün.ürünAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KöpekÜrün.ürünAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KuşÜrün.ürünAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MÜŞTERİ.müşteriAdı)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.siparişNo }) |
+                @Html.ActionLink("Details", "Details", new { id=item.siparişNo }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.siparişNo })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

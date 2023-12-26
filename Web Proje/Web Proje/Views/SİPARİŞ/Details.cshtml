@@ -1,0 +1,90 @@
+﻿@model Web_Proje.SİPARİŞ
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>SİPARİŞ</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.toplamFiyat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.toplamFiyat)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FATURA.faturaNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FATURA.faturaNo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HamsterÜrün.ürünAd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HamsterÜrün.ürünAd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.KARGO.Adı)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.KARGO.Adı)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.KediÜrün.ürünAd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.KediÜrün.ürünAd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.KöpekÜrün.ürünAd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.KöpekÜrün.ürünAd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.KuşÜrün.ürünAd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.KuşÜrün.ürünAd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MÜŞTERİ.müşteriAdı)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MÜŞTERİ.müşteriAdı)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.siparişNo }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
